@@ -1,196 +1,116 @@
-\documentclass{resume}
-%\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
-%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-\usepackage{tabularx}
 
+\documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Haoran}{Zhang}
+\email{haoranz6@uiuc.edu}                               % optional, remove / comment the line if not wanted
+%\homepage{www.marisa.moe}                         % optional, remove / comment the line if not wanted
+\social[github]{https://github.com/WindChimeRan/}                              % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
-\pagenumbering{gobble} % suppress displaying page number
-
-\name{Mr. Haoran ZHANG}
-
-\basicInfo{
-  \email{haoranzh316@163.com} \textperiodcentered\
-  \phone{0086-15674918015} \textperiodcentered\
-  \github[WindChimeRan]{https://github.com/WindChimeRan}
-  % \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace{-1.5cm}
+\section{Education}
+\cventry{2014--2018}{Bachelor}{Changsha University of Science \& Technology}{}{}{} % arguments 3 to 6 can be left empty
+\cventry{2019--Now}{Master}{University of Illinois Urbana-Champaign}{}{}{}
+\section{Skills}
+\cventry{2015--Now}{Python}{}{}{}{
+My main programming language.
+}
+\cventry{2016--Now}{Haskell}{}{}{}{
+	Codewars 4kyu
+}
+\cventry{2015--Now}{Machine Learning}{}{}{}{
+	Implemented many classic algorithms from scratch.
+}
+\cventry{2016--2018}{Computer Vision}{}{}{}{
+	Learned Stanford CS231n online. \newline{}
+	UCLA Academic Program. \newline{}
+	Graduation Project.
+}
+\cventry{2018-Now}{Natural Language Processing}{}{}{}{
+	3 research projects. \newline{}
+	2 papers under review.
 }
 
-\section{\faGraduationCap\ Education}
-\datedsubsection{\textbf{Changsha University of Science \& Technology (CSUST)}, Changsha, China}{2014.09 -- Present}
-\datedsubsection{\textbf{Major: }Track Traffic Signal and Control \hfill{GPA: 2.76/4}}{09/2014 - 07/2015}
-\datedsubsection{\textbf{Major: }Computer Science and Technology
-  \hfill{GPA: 3.80/4 \ \ \ }}{09/2015 - 06/2018}
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
-\datedsubsection{\textbf{Overall GPA}: 3.27/4, 83.21/100}{}
-\datedsubsection{\textbf{WES GPA}: 3.34/4}{}
-\datedsubsection{\textbf{Degree}: Bachelor of Engineering}{Expected in June 2018}
-% \subsection{Overall GPA:}\hfill{3.27/4.0, 83.21/100}{}
-% platform I am familiar with
+\section{Projects}
+\cvitem{2016}{\textbf{Deep Satellite}: A semantic segmentation model for satellite image using variety
+	of the prevalent techniques, such as Fully Convolutional Network, ResNeXt, VGG19. The project
+	finally compared the performance of different backbones with and without transfer learning.\href{https://github.com/WindChimeRan/Deep-Satellite}{\textit{Open Source Code}}}
 
-\section{\faLaptop\ Skills}
+\cvitem{2018}{\textbf{RA-VQA}: A multi-modal model solving Visual Question Answer. It mainly uses bottom-up attention, dual attention and residual attention.\textit{Outstanding Thesis Award}}
 
+\cvitem{2018}{\textbf{KCN}: An interactive paraphrase generation model. The outputs are determined by the keywords given by users. \textit{IEEE ACCESS under review}}
 
-\datedsubsection{\textbf{Deep Learning \& Machine Learning}}{}
- I learnt it from documentations, videos, papers and books, and practiced with GPUs in
- my lab.
- \begin{itemize}
-  
- \item \textbf{TensorFlow}: 1 year of experience; \\
-   {\url{https://github.com/WindChimeRan/Learn-Tensorflow-Notes}}
-  \item \textbf{Python3}: 2 years of experience with focus on implementing
-    machine learning algorithms;
-  \item \textbf{Online Stanford CS231n Convolutional Neural Networks for Visual
-      Recognition}: \\
-  familiarized with CNNs,RNNs,GANs, and read over 60 papers; 
-\item \textbf{Coursera Course}: \textit{Machine Learning}(Stanford University, 8 weeks)
-\item \textbf{Coursera Course}: \textit{Probability Graph Models}(Stanford University, 2
-   weeks, In-progress)
- \end{itemize}
+\cvitem{2018}{\textbf{PyTorch-CopyRE}: A reimplementation of "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism ACL2018" \href{https://github.com/WindChimeRan/pytorch_copy_re}{\textit{Open Source Code}}}
 
- \datedsubsection{\textbf{Other Skills}}{}
- PyTorch, Cuda, OpenCV, LaTeX, Spacemacs, Linux, μC/OS-II; \\
- Haskell, scheme, C, C++, Assembly, Java, Matlab
- 
- \datedsubsection{\textbf{Relavant Course Papers}}{}
- \begin{itemize}
-   \item \textit{Compiler Principles and Technique A}: Mechanism and Compiling
-     Optimization of TensorFlow
-   \item \textit{Digital Image Processing}: K-means for Image Segmentation
-   \item \textit{The Principle of Computer Organization A}: Difference in Programming
-     with CPU and GPU
- \end{itemize}
-\section{\faLightbulbO\ Research Experiences}
-\datedsubsection{\textbf{Big Data and Machine Learning Project}}{10/2016 -
-  06/2017}
+\cvitem{2018}{\textbf{NRE2018Papers}: A collections of awesome Neural Relation Extraction papers in 2018. The papers are well classified and summarized. \href{https://github.com/WindChimeRan/NREPapers2018}{\textit{Open Source Repo}}}
 
-An independent research program to build a deep neural network for satellite
-imagery segmentation using variety of the-state-of-the-art techniques, especially Fully Convolutional Network, ResNeXt,
-VGG19. The project finally compared the performance of different backbones with
-and without transfer learning.
-% \role{Kotlin, C\#, Racket, Ruby}{Founder and main contributer to the
-% Kotlin/C\#/Ruby version}
-\\ 
-\textit{Advisor: Roy Yang}, Data Scientist \hfill{UCLA Academic Program}
-\begin{itemize}
- \item Research Content: deep learning semantic segmentation for satellite
-   imagery; \\
-   {\url{https://github.com/WindChimeRan/Deep-Satellite}}
- \item Took responsibility for dataset searching and cleaning, algorithm building, data
-visualization and report writing;
-  \item Built dataset from DSTL, compared a transferred version and
-    non-transferred version with the better one converged in 12 hours, and the
-    mIoU was enhanced to 0.89.
+\cvitem{2018}{\textbf{CopyMT}: Solve the task of Joint Extraction of Entities and Relations. I give extensive analysis of the drawbacks of prior works. The performance outweighs
+	the state-of-the-art models with a
+	large margin. \textit{ACL2019 under review}}
 
-\end{itemize}
+\cvitem{2019}{\textbf{TMCL}: Distant Supervised Relation Extraction with Entity Type Constraint. This model innovatively focuses on the false negative noise in NA relation. \textit{On Going}}
 
+\section{Miscellaneous}
+\cvlistdoubleitem{TOEFL 100, GRE 325}{Top2 GPA in junior year.}
+\cvlistdoubleitem{Active in open source community}{Scholarships every year}
 
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\datedsubsection{\textbf{Unmanned Aerial Vehicle Design}}{11/2016 - 04/2017}
-% \role{Kotlin, C\#, Racket, Ruby}{Founder and main contributer to the
-% Kotlin/C\#/Ruby version}
-\textit{Advisor: Prof. Zhou Shuren} \hfill{Dean of Computer Science, CSUST}
-\begin{itemize}
- \item Research Content: Aerial Vehicle Camera Algorithm Design;
- \item Took responsibility for camera driver modifying, tracing algorithm building and
-project management;
- \item Built a moving objects recognition algorithm with inter-frame difference method.
-
-
-\end{itemize}
-
-\datedsubsection{\textbf{Forecasting Traffic Flow Based on Genetic Neural Network}}{09/2015 - 04/2016}
-\textit{Role: Group Leader}{}
-\begin{itemize}
- \item Research Content: Regression algorithm Improvement;
- \item Responsibility: Collected data, programmed selection/crossover/mutation/back propagation/gradient checking.
-module, made final presentation;
- \item Earned College Scientific Research Reward, CSUST.
-\end{itemize}
-
-\datedsubsection{\textbf{Course Project on C++ MFC Gobang Game \& AI Design}}{05/2016}
-\textit{Role: Group Leader}{}
-\begin{itemize}
- \item Research Content: GUI, LAN, and AI design;
- \item Responsibility: Programming includes GUI, LAN, and AI module;
- \item Got the highest score of 92 in the course \textit{Basic of the Software System Design Training} (C++
-MFC) among the whole department of 256 students, ranking Top 1.
-\end{itemize}
-
-% Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
-%  \item main contribution
-%\end{itemize}
-
-\section{\faUniversity\ ACADEMIC ACTIVITIES}
-\datedsubsection{\textbf{Machine Vision Lab}}{09/2016 - 07/2017}
-\textit{Role: Co-founder \& Leader}{}
-\begin{itemize}
- \item Co-founded the lab for the extended learning of machine vision for undergraduates and cooperated with graduates;
- \item Organized group seminar once a week between undergraduates and graduates, built an
-Introduction of Machine Vision Repository(See Link); 
-\\
-\url{https://github.com/WindChimeRan/Machine-Vision-Lab-Tutorial/tree/master/Hello\%20Python}
-
- \item Conducted unmanned aerial vehicle project.
-\end{itemize}
-
-\datedsubsection{\textbf{Graduate Seminars of Computer Vision Track Team}}{09/2016 - 07/2017}
-\textit{Role: Member}{}
-\begin{itemize}
- \item Made presentations on TensorFlow tutorial with concentration on semantic
-   segmentation, and
-shared the experiments about deep learning I was engaged in.
-
-\end{itemize}
-
-\datedsubsection{\textbf{The Electrician Mathematical Contest in Modeling}}{09/2014 - 09/2017}
-\textit{Role: Participant}{}
-\begin{itemize}
- \item Participated in School-level Mathematical Contest in Modeling in 2014 and 2015, and attended
-the National Electrician Mathematical Contest in Modeling in 2017;
-\item Teamed with three members to solve one real problem within three days, in
-  the areas of biostatistics,
-optimization, and data engineering;
-\item Responsible for coding and rapid prototyping;
-\item Earned 3rd Prize in The Electrician Mathematical Contest in Modeling (National)
-
-\end{itemize}
-
-\datedsubsection{\textbf{GPU Technology Conference 2016 (GTC 2016)}}{09/2016}
-\textit{Role: Participant}{}
-\begin{itemize}
- \item Received one-day training on deep learning hosted by NVIDIA;
-\item Learned about current development of AI and the most cutting-edge knowledge in deep
-learning, for example, Caffe, TensorFlow, CNTK, LeNet, sliding window, FCN;
-\item Earned Certificate of Attendance.
-\end{itemize}
-
-
-% \section{\faInfo\  Miscellaneous}
-% \begin{itemize}[parsep=0.5ex]
-%  \item Blog(Chinese): \url{http://blog.csdn.net/xsfl1234}
-%  \item Languages: English - fluent (TOEFL 100), Chinese - native speaker
-% \end{itemize}
-
-\section{\faStar\ ACADEMIC HONORS}
-\begin{itemize}
- \item[]{\textit{\nth{2} class Scholarship for 2016-2017 Academic Year}, CSUST}{\hfill{09/2017}}
-
- \item[]{\textit{\nth{3} class Scholarship for 2015-2016 Academic Year}, CSUST}{\hfill{09/2016}}
- \item[]{\textit{\nth{3} Prize in ACM-CSUST Collegiate Programming Contest}}{\hfill{07/2016}}
- \item[]{\textit{College Scientific Research Reward}, CSUST}{\hfill{02, 04/2016}}
- \item[]{\textit{Scholarship for Academic Competition Excellence},
-   CSUST}{\hfill{09/2015}}
-\item[]{\textit{\nth{2} Prize in ACM-CSUST Collegiate Programming Contest}}{\hfill{07/2015}}
- \item[]{\textit{\nth{3} Prize in The Electrician Mathematical Contest in
-       Modeling}, National}{\hfill{05/2015}}
-\end{itemize}
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
+\clearpage
 \end{document}
 
+
+%% end of file `template.tex'.
