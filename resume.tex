@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 %% start of file `template.tex'.
 %% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
 %
@@ -56,28 +57,31 @@
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
 %\nocite{*}
-%\bibliographystyle{plain}
-%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
 \section{Projects}
-\cvitem{2016}{\textbf{Deep Satellite} \hspace{51ex} \href{https://github.com/WindChimeRan/Deep-Satellite}{\textit{Open Source Code}} \newline A semantic segmentation model for satellite image using variety
-	of the prevalent techniques, such as Fully Convolutional Network, ResNeXt, VGG19. The project
-	finally compared the performance of different backbones with and without transfer learning.}
+% \cvitem{2016}{\textbf{Deep Satellite} \hspace{51ex} \href{https://github.com/WindChimeRan/Deep-Satellite}{\textit{Open Source Code}} \newline A semantic segmentation model for satellite image using variety
+% 	of the prevalent techniques, such as Fully Convolutional Network, ResNeXt, VGG19. The project
+% 	finally compared the performance of different backbones with and without transfer learning.}
 
-\cvitem{2018}{\textbf{RA-VQA} \hspace{50ex}\textit{Outstanding Thesis Award} \newline A multi-modal model solving Visual Question Answer. It mainly uses bottom-up attention, dual attention and residual attention.}
+% \cvitem{2018}{\textbf{RA-VQA} \hspace{50ex}\textit{Outstanding Thesis Award} \newline A multi-modal model solving Visual Question Answer. It mainly uses bottom-up attention, dual attention and residual attention.}
 
-\cvitem{2018}{\textbf{KCN} \hspace{53ex} \textit{IEEE ACCESS under review} An interactive paraphrase generation model. The outputs are determined by the keywords given by users. }
+\cvitem{2018}{\textbf{KCN} \hspace{69ex} paper \cite{KCN} An interactive paraphrase generation model. The outputs are determined by the keywords given by users. }
 
 \cvitem{2018}{\textbf{PyTorch-CopyRE} \hspace{49ex} \href{https://github.com/WindChimeRan/pytorch_copy_re}{\textit{Open Source Code}} \newline 
-	 A reimplementation of "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism ACL2018". }
+	 A reimplementation of "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism ACL2018". Gain 15 stars in Github.}
 
-\cvitem{2018}{\textbf{NRE2018Papers} \hspace{50ex} \href{https://github.com/WindChimeRan/NREPapers2018}{\textit{Open Source Repo}}  A collections of awesome Neural Relation Extraction papers in 2018. The papers are well classified and summarized. }
+\cvitem{2018}{\textbf{NRE2018Papers \& NRE2019Papers} \hspace{30ex} \href{https://github.com/WindChimeRan/NREPapers2018}{\textit{Open Source Repo}}  A collections of awesome Neural Relation Extraction papers in 2018-2019. The papers are well classified and summarized. Gain 31 stars in github.}
 
-\cvitem{2018}{\textbf{CopyMT} \hspace{53ex}  \textit{ACL2019 under review} \newline Solve the task of Joint Extraction of Entities and Relations. I give extensive analysis of the drawbacks of prior works. The performance outweighs
+\cvitem{2018}{\textbf{CopyMT} \hspace{47ex}  \textit{will be submited to AAAI2019} \newline Solve the task of Joint Extraction of Entities and Relations. I give extensive analysis of the drawbacks of prior works. The performance outweighs
 	the state-of-the-art models with a
 	large margin. }
 
-\cvitem{2019}{\textbf{TMCL} \hspace{68ex} \textit{On Going} \newline Distant Supervised Relation Extraction with Entity Type Constraint. This model innovatively focuses on the false negative noise in NA relation. }
+\cvitem{2019}{\textbf{Pytorch-Multi-head-selection} \hspace{37ex}  \href{https://github.com/WindChimeRan/pytorch_multi_head_selection_re}{\textit{Open Source Code}} \newline 
+A reimplementation of "Joint entity recognition and relation extraction as a multi-head selection problem (Expert Syst. Appl, 2018)". Gain 16 stars in github.}
+
+\cvitem{2019}{\textbf{TMCL} \hspace{49ex}  \textit{will be submited to AAAI2019} \newline Distant Supervised Relation Extraction with Entity Type Constraint. This model innovatively focuses on the false negative noise in NA relation. }
 
 \section{Computer Skills}
 \cvitem{}{\textbf{Python}: My main programming language.}{}{}{}{}
@@ -85,14 +89,14 @@
 \cvitem{}{\textbf{Machine Learning}: Implemented many classic algorithms from scratch.}
 \cvitem{}{\textbf{Computer Vision}: Learned Stanford CS231n online.}
 \cvitem{}{\hspace{19ex}UCLA Academic Program.}
-\cvitem{}{\hspace{19ex}Graduation Project.}
+\cvitem{}{\hspace{19ex}Outstanding Undergraduate Thesis Award.}
 
 \cvitem{}{\textbf{Natural Language Processing}: 3 research projects.}
 \cvitem{}{\hspace{32ex}2 papers under review.}
 
 
 \section{Others}
-\cvlistdoubleitem{TOEFL 100, GRE 325}{Top2 GPA in junior year.}
+% \cvlistdoubleitem{TOEFL 100, GRE 325}{Top2 GPA in junior year.}
 \cvlistdoubleitem{Active in open source community}{Scholarships every year}
 
 % Publications from a BibTeX file using the multibib package
@@ -104,7 +108,7 @@
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\clearpage
+% \clearpage
 \end{document}
 
 
