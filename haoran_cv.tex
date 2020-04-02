@@ -18,17 +18,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass{resume} % Use the custom resume.cls style
-
+% \linespread{1}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
-\usepackage{hyperref}
+% \usepackage{hyperref}
+\usepackage[colorlinks=True,citecolor={yellow}]{hyperref}
+\usepackage{setspace}
+\hypersetup{
+     colorlinks = true,
+     linkcolor = blue,
+     anchorcolor = blue,
+     citecolor = blue,
+     filecolor = blue,
+     urlcolor = blue
+     }
+
+
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \name{Haoran Zhang} % Your name
-\address{University of Illinois Urbana-Champaign, Illinois, US}
+% \address{University of Illinois Urbana-Champaign, Illinois, US}
 % \address{github.com/WindChimeRan} % Your address
 %\address{123 Pleasant Lane \\ City, State 12345} % Your secondary addess (optional)
 \address{\href{https://github.com/WindChimeRan/}{github.com/WindChimeRan} \\ haoranz6@illinois.edu} % Your phone number and email
@@ -36,27 +48,30 @@
 \begin{document}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
+%   EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Education}
 
-{\bf University of Illinois Urbana-Champaign} \hfill {\em August 2019 - Present} 
-\\ Master, Information Management
-\\{\bf Changsha University of Science \& Technology} \hfill {\em July 2014 - June 2018} 
-\\ Bachelor, Computer Science
+{\bf University of Illinois Urbana-Champaign} \hfill {\em Aug 2019 - Present} 
+\\ Master of Science, Information Management
+\medskip
+\\{\bf Changsha University of Science \& Technology} \hfill {\em Jul 2014 - Jun 2018} 
+\\ Bachelor of Science, Computer Science
 %Minor in Linguistics \smallskip \\
 %Member of Eta Kappa Nu \\
 %Member of Upsilon Pi Epsilon \\
 
 
 \end{rSection}
-
 \begin{rSection}{Research Experience}
-    {\bf Changsha University of Science \& Technology} \hfill {\em May 2018 - Sep 2019} 
-\\ Research Assistant on Relation Extraction \hfill {\em Supervised by Daojian Zeng}
-\\{\bf University of California, Los Angeles} \hfill {\em Sep 2016 - June 2017} 
-\\ Remote Summer Research on Computer Vision \hfill {\em Supervised by Yajia Yang}
+{\bf University of Illinois Urbana-Champaign} \hfill {\em Sep 2019 - Present} 
+\\ BLENDER Member, Supervised by Heng Ji. \medskip 
+\\ {\bf Changsha University of Science \& Technology} \hfill {\em May 2018 - Sep 2019} 
+\\ Research Assistant on Relation Extraction, Supervised by Daojian Zeng. \medskip
+\\{\bf University of California, Los Angeles} \hfill {\em Sep 2016 - Jun 2017} 
+\\ Remote Summer Research on Computer Vision, Supervised by Yajia Yang.
+
 \end{rSection}
 % \begin{rSection}{Carrier Objective}
 %  To work for an organization which provides me the opportunity to improve my skills and knowledge to grow along with the organization objective.
@@ -65,42 +80,76 @@
 %    Projects And Seminars
 %-----------------------------------------------------------------------------------------------
 \begin{rSection}{Projects}
-{\bf Open Source Relation Extraction}
-\begin{enumerate}
-    \item reproduction of papers: \href{https://github.com/WindChimeRan/pytorch_multi_head_selection_re}{\textit{Multihead Selection}} and \href{https://github.com/WindChimeRan/pytorch_copy_re}{\textit{CopyRE}} (50 stars)
-    \item summaries and tags of papers: \href{https://github.com/WindChimeRan/NREPapers2018}{\textit{RE2018}} and \href{https://github.com/WindChimeRan/NREPapers2019}{\textit{RE2019}} (35 stars)
-\end{enumerate}
+% {\bf Open Source Relation Extraction}
+% \begin{enumerate}
+%     \item reproduction of papers: \href{https://github.com/WindChimeRan/pytorch_multi_head_selection_re}{\textit{Multihead Selection}} and \href{https://github.com/WindChimeRan/pytorch_copy_re}{\textit{CopyRE}} (59 stars)
+%     \item summaries and tags of papers: \href{https://github.com/WindChimeRan/NREPapers2018}{\textit{RE2018}} and \href{https://github.com/WindChimeRan/NREPapers2019}{\textit{RE2019}} (37 stars)
+% \end{enumerate}
 
 % reproduction of papers \href{https://github.com/WindChimeRan/pytorch_multi_head_selection_re}{\textit{Multihead Selection}} and \href{https://github.com/WindChimeRan/pytorch_copy_re}{\textit{CopyRE}}
 % % \\The project aims at designing and fabrication of two Buckling Restrained Braces which were analyzed under dynamic loading. As alternative for conventional braces, these BRBs are also beneficial for seismic retro-fitting in RCC and steel structures.\\
-{\bf Distant Supervised Relation Extraction without False Negative Noise} (On going)\\
-    NA relation covers 79\% bags in the prevalent DSRE dataset, where false negative noise plays an important role in the prediction. We discuss the causes of the false negative noise and put forward a reasonable assumption. Based on the assumptions and external fine-grained entity type information, our model works better on the pure test set.
 
-{\bf Joint Extraction of Entities and Relations without Chain Dependency} (On going)\\
-    The recent Seq2Seq model (CopyRE) for joint extraction has innate drawbacks on complex classification. We analyze the reason why the F1 score decreasing with the decoding length increase. Then we propose two remedies: 1. bi-directional decoding. 2. multihead decoding.
+{\bf Sequence-to-Unordered-Multi-Tree for Joint Extraction of Relations and Entities} \hfill {\em 2020}
 
-{\bf Long Tail Classification in Distant Supervised Relation Extraction} (On going)\\
-    Long tail labels are notorious in DSRE. Inspired by the F-principle that neural networks prone to learn from high frequent labels to low frequent labels, we propose a hierarchical training hierarchical classification model to better capture the features in long tail relations.
+(On going)
+\begin{itemize}
+    \item Formulated the output sequence to unordered-multi-tree structure to mitigate the notorious exposure bias problem in the well-studied Seq2Seq model.
+    \item Yielded 32 and 0 (F1) absolute improvement over baseline on DuIE and NYT dataset respectively.
+    \item Detected flaws of the widely-used NYT dataset, i.e. the models only memorize the appeared triplets rather than generalize to new entities.
+    % \item Figuring out how data sampling and data splitting affect performance in NYT.
+    \item Implementing a toolkit containing [4 Models $\times$ 4 Datasets] to be open-sourced.  
+\end{itemize}
+
+
+
+{\bf Sequence-to-Sequence for Joint Extraction of Relations and Entities$^1$} \hfill {\em 2019}
+\begin{itemize}
+    \item Figured out a linear algebra bug causing underfitting of training set in an ACL2018 paper.
+    \item Based on theoretical analysis, added only one more non-linear layer to fix the bug.
+    % \item Adding one more non-linear layer to fix the bug with theoretical analysis.
+    \item  Yielded 14 and 31 (F1) absolute improvement over baseline on NYT and WebNLG dataset respectively.
+\end{itemize}
+
+
+{\bf Controlled Sequence-to-Sequence for Paraphrase Generation$^2$} \hfill {\em 2018}
+\begin{itemize}
+    % fill which gap?
+    \item Using only pairwise sentence training set, generated multiple paraphrases according to different keywords. 
+    \item The system was successfully deployed to both individual users scenario and data augmentation of models.
+    % \item Using keywords and the source sentence to generate controlled paraphrase.
+    % \item generating diverse paraphrases with respect to different keyword sequences.
+\end{itemize}
+% {\bf Incorporating patterns into relation extraction} (Ongoing)\\
+%     The distributions of labels and patterns in the sentences are hardly uniform in natural language, especially in relation extraction. We assume that the label distribution is less variant given patterns. Instead of concatenating pattern embedding to the sentence embedding, we deduce the type-constraint conditional random field to a pattern-biased classifier. This model hopefully works for patterns indicating strong label bias, and also allows human-in-loop for unseen patterns.
+
+% {\bf Distant Supervised Relation Extraction without False Negative Noise} (Ongoing)\\
+%     NA relation covers 79\% bags in the prevalent DSRE dataset, where the false-negative noise plays an important role in the prediction. The false-negative noise arises in the training set because it was aligned by existing knowledge bases, which is innately incomplete. We use a entity type dictionary to detect noise and learn without it via meta-classification learning. Our model works better on the pure test set.
+
+% {\bf Joint Extraction of Entities and Relations without Chain Dependency} (Ongoing)\\
+%     The recent Seq2Seq model (CopyRE) for joint extraction has innate drawbacks on complex classification. We analyze the reason why the F1 score decreasing with the decoding length increase. Then we propose two remedies: 1. bi-directional decoding. 2. multi-head decoding.
+
+% {\bf Long Tail Classification in Distant Supervised Relation Extraction} (Ongoing)\\
+%     Longtail labels are notorious in DSRE. Inspired by the F-principle that neural networks prone to learn from high frequent labels to low frequent labels, we propose a hierarchical training hierarchical classification model to better capture the features in long-tail relations.
     
 % \\{\bf Microtunneling}\\
 % Presented a seminar on Micro Tunneling, explaining its advantages over conventional method of drainage laying systems. Analysis considering direct and indirect cost of micro tunneling was also discussed.
 
 \end{rSection}
 %----------------------------------------------------------------------------------------
-%	TECHNICAL STRENGTHS SECTION
+%   TECHNICAL STRENGTHS SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Technical Strengths}
+% \begin{rSection}{Technical Strengths}
 
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Programming \ & Python, Haskell, PyTorch \\
-Tools & shell, LaTeX \\
-\end{tabular}
+% \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+% Programming \ & Python, Haskell, PyTorch \\
+% % Tools & shell, LaTeX \\
+% \end{tabular}
 
-\end{rSection}
+% \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
+%   WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
 % \begin{rSection}{Work Experience}
@@ -113,7 +162,7 @@ Tools & shell, LaTeX \\
 % \end{rSection}
 
 
-% %	EXAMPLE SECTION
+% % EXAMPLE SECTION
 % %----------------------------------------------------------------------------------------
 
 % \begin{rSection}{Academic Achievements} 
@@ -121,12 +170,11 @@ Tools & shell, LaTeX \\
 % \item Won First Prize in Model Making Competition Organized by Symbiosis Institute of Technology, Pune.
 % \end{rSection}
 
-\begin{rSection}{Papers}
-    D. Zeng*, \textbf{H. Zhang}*, Q. Liu, CopyMT: Multi-task Copy Mechanism for Joint Extraction of Entities and Relations (submitted)
+\begin{rSection}{Papers and manuscripts}
+    1. D. Zeng*, \textbf{H. Zhang}*, Q. Liu, \textit{CopyMTL: Copy Mechanism for Joint Extraction of Entities and Relations
+    with Multi-Task Learning.} AAAI, 2020. Retrieved from \href{https://arxiv.org/pdf/1911.10438.pdf}{{here}}.
 
-    D. Zeng*, \textbf{H. Zhang}, J. Tian, Jointly Extracting Entities and Relations using Attention-based Multi-head Selection and BERT (submitted)
-
-    D. Zeng*, \textbf{H. Zhang}*, L. Xiang, J. Wang and G. Ji, User-Oriented Paraphrase Generation With Keywords Controlled Network, in IEEE Access, vol. 7, pp. 80542-80551, 2019.     doi: 10.1109/ACCESS.2019.2923057
+    2. D. Zeng, \textbf{H. Zhang}, L. Xiang, J. Wang and G. Ji, \textit{User-Oriented Paraphrase Generation With Keywords Controlled Network}, in IEEE Access, vol. 7, pp. 80542-80551, 2019.     doi: 10.1109/ACCESS.2019.2923057. Retrieved from \href{https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8736871}{{here}}.
 \end{rSection}
 %----------------------------------------------------------------------------------------
 % Extra Curricular
@@ -149,6 +197,7 @@ Tools & shell, LaTeX \\
 % \item Strong motivational and leadership skills.
 % \item Ability to work as an individual as well as in group.
 % \end{rSection}
+
 \newpage
 
 \end{document}
